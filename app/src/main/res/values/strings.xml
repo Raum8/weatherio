@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherioMVP</string>
+    <string name="api_key">49ae898726a41aa5cd2fb8cd1d2342fb</string>
+    <string name="iv_change_city_decription">change city</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="moscow">Moscow</string>
+    <string name="rostov_on_don">Rostov-on-Don</string>
+    <string name="krasnodar">Krasnodar</string>
+    <string name="taganrog">Taganrog</string>
+    <string name="check_internet_connection">CHECK INTERNET CONNECTION</string>
+</resources>

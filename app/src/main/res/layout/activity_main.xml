@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_data_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".app.activities.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_name_city"
+                style="@style/textview_template"
+                android:paddingBottom="@dimen/normal_padding"
+                android:text="@string/rostov_on_don"
+                android:textSize="@dimen/large_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/iv_refresh_weather"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_refresh"
+                app:layout_constraintTop_toTopOf="@id/tv_name_city"
+                app:layout_constraintBottom_toBottomOf="@id/tv_name_city"
+                app:layout_constraintStart_toEndOf="@id/tv_name_city"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/small_margin"/>
+
+            <ImageView
+                android:id="@+id/iv_current_times_of_day"
+                android:layout_width="@dimen/size_image_times_of_day"
+                android:layout_height="@dimen/size_image_times_of_day"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name_city"
+                app:layout_constraintStart_toStartOf="@+id/tv_name_city"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_city"
+                tools:src="@drawable/day" />
+
+            <TextView
+                android:id="@+id/tv_current_main_weather"
+                style="@style/textview_template"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:textSize="@dimen/normal_text"
+                app:layout_constraintEnd_toEndOf="@+id/iv_current_times_of_day"
+                app:layout_constraintStart_toStartOf="@+id/iv_current_times_of_day"
+                app:layout_constraintTop_toBottomOf="@+id/iv_current_times_of_day"
+                tools:text="Clear sky, 18°" />
+
+            <TextView
+                android:id="@+id/tv_current_date"
+                style="@style/textview_template"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="@+id/tv_current_main_weather"
+                app:layout_constraintStart_toStartOf="@+id/tv_current_main_weather"
+                app:layout_constraintTop_toBottomOf="@+id/tv_current_main_weather"
+                tools:text="Wednesday, 12 Nov" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/days_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
