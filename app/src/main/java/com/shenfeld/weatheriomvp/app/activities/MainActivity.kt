@@ -9,8 +9,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.work.Constraints
-import androidx.work.NetworkType
 import com.shenfeld.weatherio.data.CityDto
 import com.shenfeld.weatherio.utils.*
 import com.shenfeld.weatheriomvp.R
@@ -26,10 +24,8 @@ import moxy.presenter.InjectPresenter
 import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.math.roundToInt
-import kotlin.properties.Delegates
 
 class MainActivity : MvpAppCompatActivity(), MainActivityView {
-
     @InjectPresenter
     lateinit var mMainActivityPresenter: MainActivityPresenter
     private lateinit var disposable: Disposable
@@ -41,6 +37,7 @@ class MainActivity : MvpAppCompatActivity(), MainActivityView {
         setContentView(R.layout.activity_main)
         Log.e(MainActivity::class.java.simpleName, loadCity() + " ON CREATE")
         setupCity()
+
         days_recycler_view.layoutManager = LinearLayoutManager(this)
         iv_refresh_weather.setOnClickListener { refreshCityWeather() }
         mMainActivityPresenter.onLoadWeather(curCity.lat, curCity.lon)
@@ -100,18 +97,14 @@ class MainActivity : MvpAppCompatActivity(), MainActivityView {
 
     private fun refreshCityWeather() {
         when (tv_name_city.text) {
-            getString(R.string.rostov_on_don) -> {
+            getString(R.string.rostov_on_don) ->
                 mMainActivityPresenter.onLoadWeather()
-            }
-            getString(R.string.krasnodar) -> {
+            getString(R.string.krasnodar) ->
                 mMainActivityPresenter.onLoadWeather(KRASNODAR_LAT, KRASNODAR_LON)
-            }
-            getString(R.string.moscow) -> {
+            getString(R.string.moscow) ->
                 mMainActivityPresenter.onLoadWeather(MOSCOW_LAT, MOSCOW_LON)
-            }
-            getString(R.string.taganrog) -> {
+            getString(R.string.taganrog) ->
                 mMainActivityPresenter.onLoadWeather(TAGANROG_LAT, TAGANROG_LON)
-            }
         }
         Log.e(MainActivity::class.java.simpleName, "REFRESH WEATHER")
     }
