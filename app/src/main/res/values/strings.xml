@@ -8,4 +8,5 @@
     <string name="krasnodar">Krasnodar</string>
     <string name="taganrog">Taganrog</string>
     <string name="check_internet_connection">CHECK INTERNET CONNECTION</string>
+    <string name="CURRENT_CITY">CUR_CITY</string>
 </resources>
